@@ -60,8 +60,8 @@
               }
           }
       }
-        document.querySelector('#win').innerHTML = "Win: " + win;
-        document.querySelector('#loss').innerHTML = "Loss: " +loss;
+            document.querySelector('#win').innerHTML = "Win: " + win;
+        document.querySelector('#loss').innerHTML = "Loss: " + loss;
         document.querySelector('#guessleft').innerHTML = "Number of guess left: " + guessLeft;
-        document.querySelector('#guessSoFar').innerHTML = " Your guess so far: " +guessSoFar;
+        document.querySelector('#guessSoFar').innerHTML = "Your guess so far: " + guessSoFar;
     ;
