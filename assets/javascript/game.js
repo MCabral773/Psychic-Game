@@ -1,13 +1,15 @@
 
-    var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    var wins = 0;
-    var losses = 0;
+    var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+    var win = 0;
+    var loss = 0;
     var guessLeft = 9;
     var guessSoFar = [];
 
     function reset (){
         guessLeft = 9;
-        guesssoFar = [];
+
+        guessSoFar = [];
         computerGuess = computerChoice[Math.floor(Math.random()*computerChoice.length)];
         console.log (computerGuess);
     }
@@ -21,7 +23,7 @@
     }
 
       document.onkeyUp = function(event) {
-          var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+          var userGuess = String.fromCharCode();
 
           if (!/[a-z]/.test(userGuess)){
               alert ("please choose letter only");
@@ -58,13 +60,8 @@
               }
           }
       }
-        // Hide the directions
-        directionsText.textContent = "";
-
-        // Display the user and computer guesses, and wins/losses/ties.
-        userChoiceText.textContent = "You chose: " + userGuess;
-        computerChoiceText.textContent = "The computer chose: " + computerGuess;
-        winsText.textContent = "wins: " + wins;
-        lossesText.textContent = "losses: " + losses;
-        tiesText.textContent = "ties: " + ties;
+        document.querySelector('#win').innerHTML = "Win: " + win;
+        document.querySelector('#loss').innerHTML = "Loss: " +loss;
+        document.querySelector('#guessleft').innerHTML = "Number of guess left: " + guessLeft;
+        document.querySelector('#guessSoFar').innerHTML = " Your guess so far: " +guessSoFar;
     ;
